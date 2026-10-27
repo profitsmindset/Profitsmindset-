@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Profit Mindset · Copytrading explicado fácil</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#050505;--sf:#0f0f10;--ln:rgba(255,255,255,.12);--tx:#f5f5f5;--mu:#9a9a9f;color-scheme:dark;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:Inter,system-ui,sans-serif;line-height:1.55;padding-bottom:env(safe-area-inset-bottom,0px);overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:60}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1120px,100% - 40px);margin:auto}
+#bar{position:fixed;left:0;top:env(safe-area-inset-top,0px);height:2px;width:0;background:#fff;z-index:70}
+nav{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:50;transition:.3s}
+nav.sc{background:rgba(5,5,5,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--ln)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-weight:800;letter-spacing:-.03em;font-size:19px}.logo i{font-style:normal;color:var(--mu)}
+.links{display:flex;gap:28px;font-size:14px;color:var(--mu)}.links a:hover{color:#fff}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:13px 24px;border-radius:99px;background:#fff;color:#000;font-weight:600;font-size:15px;transition:.25s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 40px rgba(255,255,255,.18)}
+.btn.o{background:none;color:#fff;border:1px solid var(--ln)}.btn.o:hover{border-color:#fff;box-shadow:none}
+.btn.s{padding:9px 18px;font-size:14px}
+.hero{min-height:100svh;display:flex;align-items:center;padding:120px 0 60px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.22) 1px,transparent 1.5px);background-size:34px 34px;-webkit-mask-image:radial-gradient(ellipse at 70% 40%,#000,transparent 65%);mask-image:radial-gradient(ellipse at 70% 40%,#000,transparent 65%);animation:drift 20s linear infinite}
+@keyframes drift{to{background-position:0 -68px}}
+.glow{position:absolute;width:520px;height:520px;right:-120px;top:10%;background:radial-gradient(circle,rgba(255,255,255,.14),transparent 65%);filter:blur(30px);animation:fl 9s ease-in-out infinite alternate}
+@keyframes fl{to{transform:translate(-60px,40px)}}
+.hg{display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center;position:relative}
+.pill{display:inline-flex;gap:8px;align-items:center;border:1px solid var(--ln);border-radius:99px;padding:7px 15px;font-size:13px;color:var(--mu);background:rgba(255,255,255,.04)}
+.pill b{width:7px;height:7px;border-radius:50%;background:#fff;animation:pu 1.8s infinite}
+@keyframes pu{50%{opacity:.25}}
+h1{font-size:clamp(40px,7vw,84px);line-height:1;letter-spacing:-.045em;margin:22px 0;font-weight:800}
+h1 .m{color:var(--mu)}
+.lead{font-size:clamp(16px,2vw,19px);color:var(--mu);max-width:520px}
+.row{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+.w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.12em;margin-bottom:-.12em}
+.w>span{display:inline-block;transform:translateY(115%);animation:up 1s cubic-bezier(.16,1,.3,1) forwards;animation-delay:calc(.15s + var(--i)*.08s)}
+@keyframes up{to{transform:none}}
+.fade{opacity:0;transform:translateY(18px);animation:fi .9s cubic-bezier(.16,1,.3,1) forwards;animation-delay:var(--d,.6s)}
+@keyframes fi{to{opacity:1;transform:none}}
+.card3d{border:1px solid var(--ln);border-radius:26px;background:linear-gradient(160deg,#151516,#08080a);padding:26px;box-shadow:0 40px 80px rgba(0,0,0,.6);will-change:transform}
+.card3d .top{display:flex;justify-content:space-between;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mu)}
+.card3d svg{width:100%;height:auto;margin:16px 0 6px;overflow:visible}
+.ch{fill:none;stroke:#fff;stroke-width:2.2;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;animation:dw 3s .8s ease forwards}
+@keyframes dw{to{stroke-dashoffset:0}}
+.mr{display:flex;align-items:center;gap:12px;padding:13px 16px;border:1px solid var(--ln);border-radius:14px;margin-top:10px;font-size:14px;background:rgba(255,255,255,.03)}
+.mr i{width:9px;height:9px;border-radius:50%;background:#fff;box-shadow:0 0 0 0 rgba(255,255,255,.6);animation:rp 2s infinite}
+@keyframes rp{to{box-shadow:0 0 0 12px rgba(255,255,255,0)}}
+.mr span{margin-left:auto;color:var(--mu);font-size:12px}
+.tick{border-block:1px solid var(--ln);overflow:hidden;padding:18px 0;background:#000}
+.tk{display:flex;gap:50px;width:max-content;animation:mq 30s linear infinite;font-weight:800;font-size:clamp(20px,3vw,34px);letter-spacing:-.02em;color:#2c2c2e;white-space:nowrap}
+.tk span:nth-child(even){color:#fff}
+@keyframes mq{to{transform:translateX(-50%)}}
+section{padding:clamp(80px,12vw,160px) 0}
+.eb{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--mu)}
+h2{font-size:clamp(32px,5vw,60px);line-height:1.04;letter-spacing:-.04em;margin:14px 0 0;font-weight:800}
+.rv{opacity:0;transform:translateY(40px);transition:1s cubic-bezier(.16,1,.3,1)}.rv.on{opacity:1;transform:none}
+.sg{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px}
+.stk{position:sticky;top:130px;align-self:start}
+.stk p{color:var(--mu);max-width:420px;margin-top:20px;font-size:18px}
+.pn{border:1px solid var(--ln);border-radius:26px;padding:34px;margin-bottom:26px;background:var(--sf);opacity:.35;transform:scale(.97);transition:.6s}
+.pn.on{opacity:1;transform:none;border-color:rgba(255,255,255,.4)}
+.pn small{color:var(--mu);font-size:13px;letter-spacing:.14em}
+.pn h3{font-size:28px;letter-spacing:-.03em;margin:10px 0 8px}.pn p{color:var(--mu);margin:0}
+.pn svg{width:100%;height:110px;margin-top:22px}.pn svg *{fill:none;stroke:#fff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.fw{stroke-dasharray:4 8;animation:fw 1s linear infinite}@keyframes fw{to{stroke-dashoffset:-24}}
+.bars{display:flex;align-items:flex-end;gap:14px;height:110px;margin-top:22px}
+.bars b{background:#fff;border-radius:4px;width:46px;height:0;transition:height 1.2s cubic-bezier(.16,1,.3,1)}
+.pn.on .bars b:first-child{height:100%}.pn.on .bars b:last-child{height:38%}
+.tl{position:relative;max-width:760px;margin:70px auto 0;padding-left:70px}
+.tl::before,.tl i{content:"";position:absolute;left:23px;top:0;width:2px;background:var(--ln);height:100%}
+.tl i{background:#fff;height:var(--p,0%);transition:height .15s linear}
+.st{position:relative;padding-bottom:70px}.st:last-child{padding-bottom:0}
+.st em{position:absolute;left:-70px;top:0;width:48px;height:48px;border-radius:50%;background:var(--bg);border:2px solid var(--ln);display:grid;place-items:center;font-style:normal;font-weight:800;transition:.5s}
+.st.on em{background:#fff;color:#000;border-color:#fff;transform:scale(1.1)}
+.st h3{font-size:26px;letter-spacing:-.03em;margin:4px 0 8px}.st p{color:var(--mu);margin:0 0 18px}
+.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:18px;margin-top:60px}
+.bc{grid-column:span 2;border:1px solid var(--ln);border-radius:26px;padding:32px;background:var(--sf);position:relative;overflow:hidden;min-height:230px}
+.bc:nth-child(1),.bc:nth-child(4){grid-column:span 3}
+.bc::after{content:"";position:absolute;inset:0;background:radial-gradient(360px circle at var(--x,50%) var(--y,0),rgba(255,255,255,.1),transparent 60%);opacity:0;transition:.3s}.bc:hover::after{opacity:1}
+.bc h3{font-size:24px;letter-spacing:-.03em;margin:46px 0 8px;position:relative}.bc p{color:var(--mu);margin:0;position:relative}
+.bc .n{font-size:13px;color:var(--mu);letter-spacing:.14em}
+details{border-bottom:1px solid var(--ln);padding:24px 0}
+summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;font-size:20px;font-weight:600;letter-spacing:-.02em}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:28px;line-height:1;transition:.3s;color:var(--mu)}
+details[open] summary::after{transform:rotate(45deg);color:#fff}
+details p{color:var(--mu);margin:14px 0 0;max-width:720px}
+.risk{border:1px solid var(--ln);border-radius:26px;padding:34px;background:repeating-linear-gradient(135deg,#0c0c0d 0 14px,#090909 14px 28px)}
+.risk h3{margin:0 0 10px;font-size:22px}.risk p{margin:0;color:var(--mu)}
+.cta{text-align:center;padding:clamp(100px,14vw,200px) 0}
+.cta h2{font-size:clamp(40px,8vw,104px)}
+footer{border-top:1px solid var(--ln);padding:40px 0;color:var(--mu);font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}footer p{max-width:620px;margin:0}
+.dash{border:1px solid var(--ln);border-radius:28px;background:linear-gradient(160deg,#121213,#08080a);padding:clamp(22px,4vw,44px);margin-top:50px}
+.dtop{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:28px}
+.chip{display:inline-flex;gap:8px;align-items:center;border:1px solid var(--ln);border-radius:99px;padding:7px 14px;font-size:13px;color:var(--mu)}.chip b{width:7px;height:7px;border-radius:50%;background:#fff}
+.kp{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.k{border:1px solid var(--ln);border-radius:18px;padding:22px;background:rgba(255,255,255,.02)}.k small{color:var(--mu);font-size:12px;letter-spacing:.14em;text-transform:uppercase}.k b{display:block;font-size:clamp(28px,4vw,46px);letter-spacing:-.04em;margin-top:8px}
+.cmp{margin-top:26px;border:1px solid var(--ln);border-radius:18px;padding:24px}.cmp div.r{margin-top:18px}.cmp div.r:first-of-type{margin-top:0}
+.cmp span{display:flex;justify-content:space-between;font-size:14px;color:var(--mu);margin-bottom:8px}
+.bl{height:14px;border-radius:99px;background:#1b1b1d;overflow:hidden}.bl i{display:block;height:100%;width:0;background:#fff;border-radius:99px;transition:width 1.8s cubic-bezier(.16,1,.3,1)}.dash.on .bl i{width:var(--w)}
+.dn{font-size:12.5px;color:var(--mu);margin-top:22px}
+.dash .row{margin-top:26px}
+.mz{background:#f4f4f2;color:#0a0a0a;--mu:#5c5c61;--ln:rgba(0,0,0,.14);--sf:#fff}
+.mz .eb{color:#5c5c61}
+.qt{font-size:clamp(26px,4.4vw,52px);line-height:1.1;letter-spacing:-.04em;font-weight:800;min-height:3.4em;max-width:900px;margin:40px 0 10px;transition:.5s}.qt.f{opacity:0;transform:translateY(14px)}
+.dots{display:flex;gap:8px}.dots i{width:28px;height:3px;border-radius:3px;background:rgba(0,0,0,.15);transition:.4s}.dots i.a{background:#0a0a0a;width:48px}
+.pl{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:50px}
+.pl div{background:#fff;border:1px solid var(--ln);border-radius:22px;padding:26px;transition:.35s}.pl div:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,.1)}
+.pl small{font-size:12px;letter-spacing:.14em;color:var(--mu)}.pl h3{margin:36px 0 8px;font-size:21px;letter-spacing:-.03em}.pl p{margin:0;color:var(--mu);font-size:15px}
+.mz .btn{background:#0a0a0a;color:#fff}.mz .btn:hover{box-shadow:0 10px 40px rgba(0,0,0,.25)}
+nav .wrap{display:grid;grid-template-columns:1fr auto 1fr;gap:20px}
+.links.l{grid-column:1;grid-row:1;justify-self:start}.logo{grid-column:2;grid-row:1}.nr{grid-column:3;grid-row:1;display:flex;align-items:center;justify-content:flex-end;gap:24px}
+.logo{display:block;line-height:0;transition:.3s}.logo img{height:44px;width:auto;display:block}nav.sc .logo img{height:38px}.links{gap:24px}
+.bg{width:46px;height:46px;border-radius:50%;border:1px solid var(--ln);background:rgba(255,255,255,.04);display:grid;place-content:center;gap:5px;cursor:pointer;transition:.3s;padding:0}.bg:hover{border-color:#fff}
+.bg i{display:block;width:20px;height:2px;background:#fff;border-radius:2px;transition:.35s}
+.bg.o i:nth-child(1){transform:translateY(7px) rotate(45deg)}.bg.o i:nth-child(2){opacity:0}.bg.o i:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mn{position:fixed;inset:0;z-index:45;background:rgba(5,5,5,.97);backdrop-filter:blur(18px);display:flex;align-items:center;opacity:0;visibility:hidden;transition:.45s}.mn.o{opacity:1;visibility:visible}
+.mi{display:grid;grid-template-columns:1.2fr .8fr;gap:60px;padding-top:80px}
+.mc{display:flex;flex-direction:column;gap:6px}.mc .eb{margin-bottom:14px}.mc a{font-size:clamp(26px,5vw,52px);font-weight:800;letter-spacing:-.04em;line-height:1.15;color:#5d5d62;transform:translateY(24px);opacity:0;transition:.6s cubic-bezier(.16,1,.3,1),color .2s}.mn.o .mc a{transform:none;opacity:1;transition-delay:calc(.1s + var(--i)*.06s),0s}.mc a:hover{color:#fff}
+.ma{display:flex;flex-direction:column;gap:14px;align-self:end}.ma p{color:var(--mu);font-size:14px;margin:6px 0 0}.ma .btn{justify-content:center}
+.md{position:fixed;inset:0;z-index:80;display:grid;place-items:center;padding:20px;background:rgba(0,0,0,.7);backdrop-filter:blur(8px);opacity:0;visibility:hidden;transition:.35s}.md.o{opacity:1;visibility:visible}
+.mb{width:min(440px,100%);background:#0f0f10;border:1px solid var(--ln);border-radius:26px;padding:30px;position:relative;transform:translateY(20px);transition:.4s}.md.o .mb{transform:none}
+.tabs{display:flex;gap:6px;background:#050505;border-radius:99px;padding:5px;margin:6px 0 22px}.tabs button{flex:1;padding:10px;border:0;border-radius:99px;background:none;color:var(--mu);font:600 14px Inter,sans-serif;cursor:pointer}.tabs button.a{background:#fff;color:#000}
+.mb input{width:100%;padding:14px 16px;margin-bottom:12px;border-radius:14px;border:1px solid var(--ln);background:#050505;color:#fff;font:15px Inter,sans-serif}.mb input:focus{outline:none;border-color:#fff}
+.mb label.ck{display:flex;gap:10px;font-size:12.5px;color:var(--mu);margin:4px 0 16px}.mb label.ck input{width:auto;margin:3px 0 0}
+.mb .btn{width:100%;justify-content:center;border:0;cursor:pointer;font-family:Inter,sans-serif}
+.x{position:absolute;right:18px;top:12px;background:none;border:0;color:var(--mu);font-size:28px;cursor:pointer}
+.nt{font-size:13.5px;color:var(--mu);margin:14px 0 0;display:none}.nt.o{display:block}
+.ct{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:50px}.ct a{border:1px solid var(--ln);border-radius:26px;padding:34px;background:var(--sf);display:block;transition:.3s}.ct a:hover{border-color:#fff;transform:translateY(-4px)}.ct small{color:var(--mu);letter-spacing:.14em;font-size:12px}.ct h3{margin:30px 0 6px;font-size:24px;letter-spacing:-.03em}.ct p{color:var(--mu);margin:0}
+.mz .btn.o{background:none;color:#0a0a0a;border:1px solid rgba(0,0,0,.28)}.mz .btn.o:hover{border-color:#0a0a0a;box-shadow:none}
+details[open][data-s="closing"] summary::after{transform:none;color:var(--mu)}
+summary{transition:color .3s}summary:hover{color:#fff}
+footer.ft{padding:70px 0 34px;background:#000;font-size:14px}footer.ft .wrap{display:block}
+.fg{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+.fb img{height:46px;width:auto;display:block;margin-bottom:18px}.fb p{max-width:300px;color:var(--mu);margin:0}
+.fc{display:flex;flex-direction:column;gap:12px}.fc h4{margin:0 0 6px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#fff;font-weight:600}.fc a{color:var(--mu);transition:.2s;width:fit-content}.fc a:hover{color:#fff}
+.fl{margin-top:56px;padding-top:26px;border-top:1px solid var(--ln)}
+.rk{font-size:12px;line-height:1.7;color:#6c6c71;max-width:900px;margin:0 0 22px}
+.fbot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:12.5px;color:#6c6c71}.fbot a{color:#6c6c71;margin-left:22px;transition:.2s}.fbot a:hover{color:#fff}
+@media(max-width:860px){.fg{grid-template-columns:1fr 1fr}.fb{grid-column:1/-1}.fbot a{margin:0 22px 0 0}}
+.plan{display:grid;grid-template-columns:1.3fr .7fr;margin-top:40px;background:#0a0a0a;color:#fff;border-radius:28px;overflow:hidden}
+.plan .pi{padding:clamp(26px,4vw,48px)}.tg{display:inline-block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;border:1px solid rgba(255,255,255,.22);border-radius:99px;padding:6px 13px;color:#bbb}
+.plan h3{font-size:clamp(26px,3.4vw,38px);letter-spacing:-.035em;margin:18px 0 10px}.plan p{color:#9a9a9f;margin:0 0 20px;max-width:480px}
+.plan ul,.pdet ul{list-style:none;padding:0;margin:0;display:grid;gap:12px}.plan li,.pdet li{padding-left:30px;position:relative}.plan li::before,.pdet li::before{content:"";position:absolute;left:2px;top:.45em;width:13px;height:7px;border-left:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(-45deg)}
+.plan .pr{padding:clamp(26px,4vw,48px);background:linear-gradient(160deg,#171718,#0d0d0e);border-left:1px solid rgba(255,255,255,.1);display:flex;flex-direction:column;justify-content:center;gap:8px}.pr b{font-size:clamp(48px,6vw,76px);letter-spacing:-.05em;line-height:1}.pr span{color:#9a9a9f;font-size:14px;margin-bottom:18px}
+.plan .btn{background:#fff;color:#000;justify-content:center}
+.pnl{position:fixed;inset:0;z-index:75;background:#050505;color:#f5f5f5;overflow:auto;transform:translateX(100%);visibility:hidden;transition:transform .6s cubic-bezier(.16,1,.3,1),visibility 0s .6s;padding:calc(40px + env(safe-area-inset-top,0px)) 0 60px}.pnl.o{transform:none;visibility:visible;transition-delay:0s}
+.back{background:none;border:1px solid var(--ln);color:#fff;border-radius:99px;padding:10px 18px;font:500 14px Inter,sans-serif;cursor:pointer;margin-bottom:34px;transition:.25s}.back:hover{border-color:#fff}
+.pgrid{display:grid;grid-template-columns:.8fr 1.2fr;gap:30px;margin-top:40px;align-items:start}
+.pcard{border:1px solid var(--ln);border-radius:26px;padding:32px;background:var(--sf);display:flex;flex-direction:column;gap:12px;position:sticky;top:30px}.pcard b{font-size:60px;letter-spacing:-.05em;line-height:1}.pcard span{color:var(--mu);margin-bottom:6px}.pcard p{color:var(--mu);font-size:14px;margin:0 0 8px}.pcard .btn{justify-content:center;border:0;cursor:pointer;font-family:inherit}.pcard .btn.o{border:1px solid var(--ln)}
+.pdet h3{font-size:22px;letter-spacing:-.03em;margin:0 0 18px}.pdet ol{padding-left:20px;color:var(--mu);margin:0;display:grid;gap:12px}.pdet ol b{color:#fff}.pdet ul{margin-bottom:40px}
+@media(max-width:860px){.plan,.pgrid{grid-template-columns:1fr}.plan .pr{border-left:0;border-top:1px solid rgba(255,255,255,.1)}.pcard{position:static}}
+#mz-como{grid-template-columns:repeat(3,1fr)}
+@media(max-width:860px){.mi,.ct{grid-template-columns:1fr}.mi{gap:30px}.kp,.pl{grid-template-columns:1fr}.pl{grid-template-columns:1fr 1fr}#mz-como{grid-template-columns:1fr}}
+@media(max-width:860px){.links{display:none}.hg,.sg{grid-template-columns:1fr}.stk{position:static}.bc,.bc:nth-child(n){grid-column:span 6}.tl{padding-left:62px}.st em{left:-62px}.tl::before,.tl i{left:23px}}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01s!important;transition-duration:.01s!important}.w>span{transform:none}}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+<nav id="nv"><div class="wrap"><div class="links l"><a href="#que">Qué es</a><a href="#como">Cómo funciona</a><a href="#ventajas">Ventajas</a></div><a class="logo" href="#" aria-label="Profit Mindset"><img alt="Profit Mindset" src="data:image/png;base64,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"></a>
+<div class="nr"><div class="links"><a href="#business">Business</a><a href="#mindset">Mindset Zone</a><a href="#faq">Preguntas</a></div>
+<button class="bg" id="bg" aria-label="Abrir menú" aria-expanded="false"><i></i><i></i><i></i></button></div></div></nav>
+<div id="mn" class="mn"><div class="wrap mi"><div class="mc"><span class="eb">Menú</span><a href="#que">Qué es el copytrading</a><a href="#como">Cómo funciona</a><a href="#business">Business</a><a href="#mz-como">Mindset Zone: cómo funciona</a><a href="#faq">Preguntas frecuentes</a><a href="#contacto">Contacto</a></div><div class="ma"><button class="btn" data-m="reg" style="border:0;cursor:pointer;font-family:inherit">Regístrate</button><button class="btn o" data-m="log" style="cursor:pointer;font-family:inherit">Inicia sesión</button><p>Regístrate para recibir información sobre Copytrading y Mindset Zone.</p></div></div></div>
+<div id="pnl" class="pnl" aria-hidden="true"><div class="wrap"><button class="back" id="bk">← Volver a Mindset Zone</button><br><span class="eb">Mindset Zone</span><h2>Plan de 6 meses</h2><div class="pgrid"><div class="pcard"><b>600 €</b><span>pago único · 6 meses</span><p>Antes de contratar te explicamos el plan y sus condiciones con calma.</p><button class="btn" data-m="reg">Quiero recibir información</button><a class="btn o" href="https://wa.me/message/SVURH2DHVNIDN1" target="_blank" rel="noopener">Hablar por WhatsApp</a></div><div class="pdet"><h3>Qué incluye</h3><ul><li>Acceso a Mindset Zone durante 6 meses</li><li>Contenido de desarrollo personal para aplicar cada semana</li><li>Resolución de dudas por mensaje</li><li>Comunidad de personas con tu misma visión</li><li>Novedades y nuevos contenidos mientras dure tu plan</li></ul><h3>Cómo empezar</h3><ol><li><b>Pide información.</b> Déjanos tu correo o escríbenos por WhatsApp.</li><li><b>Resolvemos tus dudas.</b> Te explicamos el plan y las condiciones antes de que decidas.</li><li><b>Empiezas tu plan.</b> Recibes tu acceso y comienzas con tu primer contenido.</li></ol></div></div></div></div>
+<div id="md" class="md"><div class="mb"><button class="x" id="x" aria-label="Cerrar">×</button><div class="tabs"><button class="a" data-m="reg" type="button">Regístrate</button><button data-m="log" type="button">Inicia sesión</button></div><form id="fm"><input id="nm" name="nombre" placeholder="Tu nombre" autocomplete="name"><input name="email" type="email" placeholder="Correo electrónico" required autocomplete="email"><input id="pw" name="password" type="password" placeholder="Contraseña" style="display:none" autocomplete="current-password"><label class="ck" id="ck"><input type="checkbox" required>Acepto recibir información sobre Copytrading y Mindset Zone.</label><button class="btn" id="sb" type="submit">Crear mi registro</button><p class="nt" id="ntf">Muy pronto activaremos los registros. Mientras tanto, escríbenos por Instagram o WhatsApp.</p></form></div></div>
+
+<header class="hero"><div class="glow"></div><div class="wrap hg">
+<div>
+<span class="pill fade" style="--d:.1s"><b></b>Copytrading explicado fácil</span>
+<h1><span class="w" style="--i:0"><span style="--i:0">Invierte</span></span> <span class="w"><span style="--i:1">copiando</span></span> <span class="w"><span style="--i:2">a</span></span> <span class="w"><span style="--i:3">traders</span></span> <span class="w"><span style="--i:4" class="m">con</span></span> <span class="w"><span style="--i:5" class="m">experiencia.</span></span></h1>
+<p class="lead fade" style="--d:.9s">Conecta tu cuenta y replica de forma automática las operaciones de un trader, en proporción a lo que aportes. Sin pasar horas frente a los gráficos.</p>
+<div class="row fade" style="--d:1.1s"><a class="btn" href="https://www.vtmarkets.com/trade-now/?affid=MTIwMDE2Nw==&invitecode=GitOB3UT" target="_blank" rel="noopener">Abrir cuenta →</a><a class="btn o" href="#que">Cómo funciona</a></div>
+</div>
+<div class="card3d fade" id="c3" style="--d:.8s"><div class="top"><span>Trader</span><span>Tu cuenta</span></div>
+<svg viewBox="0 0 300 120"><path class="ch" pathLength="1" d="M0 95 C30 90 40 60 70 66 S110 100 140 70 S190 20 220 42 S270 30 300 8"/></svg>
+<div class="mr"><i></i>El trader abre una operación<span>en directo</span></div>
+<div class="mr"><i style="animation-delay:.5s"></i>Tu cuenta la replica sola<span>automático</span></div>
+<div class="mr"><i style="animation-delay:1s"></i>Ajustada a tu capital<span>proporcional</span></div></div>
+</div></header>
+
+<div class="tick"><div class="tk"><span>COPYTRADING</span><span>AUTOMÁTICO</span><span>PROPORCIONAL</span><span>TÚ DECIDES</span><span>COPYTRADING</span><span>AUTOMÁTICO</span><span>PROPORCIONAL</span><span>TÚ DECIDES</span><span>COPYTRADING</span><span>AUTOMÁTICO</span><span>PROPORCIONAL</span><span>TÚ DECIDES</span><span>COPYTRADING</span><span>AUTOMÁTICO</span><span>PROPORCIONAL</span><span>TÚ DECIDES</span></div></div>
+
+<section id="que"><div class="wrap sg">
+<div class="stk rv"><span class="eb">Qué es</span><h2>Un trader opera. Tu cuenta copia.</h2><p>El copytrading te permite seguir a un trader y que sus operaciones se reproduzcan en tu propia cuenta, sin que tengas que analizar los mercados.</p></div>
+<div>
+<div class="pn"><small>01</small><h3>Un trader opera</h3><p>Un profesional toma decisiones en los mercados con su propia estrategia.</p>
+<svg viewBox="0 0 300 110"><rect x="90" y="8" width="120" height="70" rx="8"/><path d="M150 8v70M90 43h120M100 30l14-5 12 8 18-4M162 30l12-10 14 6 14-8M100 66l16-8 12 4 18-10M162 66l12-8 12 4 14-6M150 78v10M120 100h60"/></svg></div>
+<div class="pn"><small>02</small><h3>Tu cuenta replica</h3><p>Cada movimiento se copia de forma automática, sin que tengas que hacer nada.</p>
+<svg viewBox="0 0 300 110"><path class="fw" d="M150 0v28M150 28C150 48 60 44 60 66M150 28v38M150 28C150 48 240 44 240 66"/><circle cx="60" cy="82" r="10"/><circle cx="150" cy="82" r="10"/><circle cx="240" cy="82" r="10"/></svg></div>
+<div class="pn"><small>03</small><h3>En proporción a tu capital</h3><p>Las mismas operaciones, ajustadas a lo que tú decidas aportar.</p>
+<div class="bars"><b></b><b></b></div></div>
+</div></div></section>
+
+<section id="como" style="background:#0a0a0b;border-block:1px solid var(--ln)"><div class="wrap">
+<div style="text-align:center" class="rv"><span class="eb">Cómo funciona</span><h2>Empezar es sencillo.</h2></div>
+<div class="tl" id="tl"><i></i>
+<div class="st"><em>1</em><h3>Abre tu cuenta en el broker</h3><p>Crea tu cuenta en pocos minutos desde nuestro enlace.</p><a class="btn" href="https://www.vtmarkets.com/trade-now/?affid=MTIwMDE2Nw==&invitecode=GitOB3UT" target="_blank" rel="noopener">Abrir cuenta →</a></div>
+<div class="st"><em>2</em><h3>Conéctala con el servicio</h3><p>Te acompañamos para enlazar tu cuenta y elegir cuánto quieres aportar.</p></div>
+<div class="st"><em>3</em><h3>Tu cuenta copia al trader</h3><p>A partir de ahí, las operaciones se replican de forma automática.</p></div>
+</div></div></section>
+
+<section id="ventajas"><div class="wrap"><div class="rv"><span class="eb">Ventajas</span><h2>Menos gráficos.<br>Más claridad.</h2></div>
+<div class="bento rv">
+<div class="bc"><span class="n">01</span><h3>Sin horas frente a la pantalla</h3><p>No necesitas analizar mercados ni abrir operaciones tú mismo.</p></div>
+<div class="bc"><span class="n">02</span><h3>Proporcional a tu capital</h3><p>Las operaciones se ajustan al importe que decidas aportar.</p></div>
+<div class="bc"><span class="n">03</span><h3>Tú decides</h3><p>Eliges cuánto aportar y puedes revisar tu cuenta cuando quieras.</p></div>
+<div class="bc"><span class="n">04</span><h3>Acompañamiento cercano</h3><p>Te explicamos cada paso con calma y respondemos tus dudas por mensaje privado.</p></div>
+<div class="bc"><span class="n">05</span><h3>Información clara</h3><p>Te contamos cómo funciona y también los riesgos, sin promesas irreales.</p></div>
+</div></div></section>
+
+<section id="business" style="border-top:1px solid var(--ln)"><div class="wrap"><div class="rv"><span class="eb">Business</span><h2>Resultados que puedes<br>revisar tú mismo.</h2></div>
+<div class="dash rv" id="dash"><div class="dtop"><span class="chip"><b></b>Cuenta con historial público en FX Blue</span><span class="chip">PROFITSMINDSET</span></div>
+<div class="kp"><div class="k"><small>Cuenta abierta en</small><b data-n="2020" data-f="y">2020</b></div><div class="k"><small>Depósito inicial</small><b data-n="6000">6.000 €</b></div><div class="k"><small>Balance actual</small><b data-n="44500" data-p="≈ ">≈ 44.500 €</b></div></div>
+<div class="cmp"><div class="r"><span><em style="font-style:normal">Depósito inicial (2020)</em><em style="font-style:normal">6.000 €</em></span><div class="bl"><i style="--w:13.5%"></i></div></div><div class="r"><span><em style="font-style:normal">Balance actual</em><em style="font-style:normal">≈ 44.500 €</em></span><div class="bl"><i style="--w:100%"></i></div></div></div>
+<div class="row"><a class="btn" href="https://www.fxblue.com/users/PROFITSMINDSET" target="_blank" rel="noopener">Ver historial completo en FX Blue ↗</a></div>
+<p class="dn">El balance no equivale a rentabilidad: puede incluir ingresos y retiradas. Consulta el historial completo y las estadísticas actualizadas en FX Blue. Las rentabilidades pasadas no garantizan resultados futuros.</p></div></div></section>
+
+<section id="mindset" class="mz"><div class="wrap"><div class="rv"><span class="eb">Mindset Zone · Desarrollo personal</span><h2>Tu mentalidad es<br>tu mejor inversión.</h2></div>
+<div class="qt" id="qt">“La disciplina te lleva donde la motivación no llega.”</div><div class="dots" id="dots"><i class="a"></i><i></i><i></i><i></i></div>
+<div class="pl rv"><div><small>01</small><h3>Disciplina</h3><p>Constancia por encima del impulso del momento.</p></div><div><small>02</small><h3>Gestión emocional</h3><p>Decidir con calma, no con miedo ni euforia.</p></div><div><small>03</small><h3>Hábitos</h3><p>Rutinas pequeñas que sostienen grandes metas.</p></div><div><small>04</small><h3>Visión a largo plazo</h3><p>Pensar en años, no en días.</p></div></div>
+<div class="rv" style="margin-top:70px"><span class="eb">Cómo funciona</span><h2 style="font-size:clamp(28px,4vw,46px)">Mindset Zone, paso a paso</h2></div>
+<div class="pl rv" id="mz-como"><div><small>01</small><h3>Regístrate</h3><p>Déjanos tu correo para recibir información de cada novedad.</p></div><div><small>02</small><h3>Recibe contenido</h3><p>Reflexiones y herramientas de desarrollo personal para tu día a día.</p></div><div><small>03</small><h3>Crece con la comunidad</h3><p>Comparte el camino con personas que piensan a largo plazo.</p></div></div>
+<div class="rv" style="margin-top:70px"><span class="eb">Planes</span><h2 style="font-size:clamp(28px,4vw,46px)">Elige cómo empezar.</h2></div>
+<div class="plan rv"><div class="pi"><span class="tg">Mindset Zone</span><h3>Plan de 6 meses</h3><p>Seis meses para trabajar tu mentalidad con constancia. Todo en un solo pago.</p><ul><li>Acceso a Mindset Zone durante 6 meses</li><li>Contenido de desarrollo personal para aplicar cada semana</li><li>Resolución de dudas por mensaje</li><li>Comunidad de personas con tu misma visión</li></ul></div><div class="pr"><b>600 €</b><span>pago único · 6 meses</span><button class="btn" id="pb" style="border:0;cursor:pointer;font-family:inherit">Ver el plan</button></div></div>
+<div class="row rv"><button class="btn" data-m="reg" style="border:0;cursor:pointer;font-family:inherit">Regístrate para recibir información</button><a class="btn o" href="https://www.instagram.com/profitsmindset" target="_blank" rel="noopener">Únete en Instagram</a></div></div></section>
+
+<section id="faq" style="padding-top:0"><div class="wrap" style="max-width:860px"><div class="rv"><span class="eb">Preguntas</span><h2>Lo que más nos preguntan</h2></div><div class="rv" style="margin-top:40px">
+<details open><summary>¿Qué es el copytrading?</summary><p>Es una forma de operar en la que tu cuenta replica automáticamente las operaciones de un trader, en proporción a tu capital.</p></details>
+<details><summary>¿Necesito experiencia?</summary><p>No necesitas analizar mercados, pero sí conviene que entiendas cómo funciona y los riesgos antes de empezar. Te lo explicamos con calma.</p></details>
+<details><summary>¿Puedo perder dinero?</summary><p>Sí. Operar en los mercados, especialmente con apalancamiento, conlleva riesgo de perder parte o la totalidad del capital. Invierte solo dinero que puedas permitirte perder.</p></details>
+<details><summary>¿Cómo empiezo?</summary><p>Abre tu cuenta en el broker desde nuestro enlace y escríbenos para ayudarte a conectarla.</p></details>
+</div></div></section>
+
+
+
+<section class="cta"><div class="wrap rv"><span class="eb">¿Hablamos?</span><h2>Da el primer paso<br>con información clara.</h2>
+<div class="row" style="justify-content:center;margin-top:44px"><a class="btn" href="https://www.vtmarkets.com/trade-now/?affid=MTIwMDE2Nw==&invitecode=GitOB3UT" target="_blank" rel="noopener">Abrir cuenta →</a><a class="btn o" href="https://www.instagram.com/profitsmindset" target="_blank" rel="noopener">Escríbenos por Instagram</a></div></div></section>
+
+<section id="contacto" style="border-top:1px solid var(--ln)"><div class="wrap"><div class="rv"><span class="eb">Contacto</span><h2>¿Tienes dudas?<br>Hablemos.</h2></div><div class="ct rv"><a href="https://wa.me/message/SVURH2DHVNIDN1" target="_blank" rel="noopener"><small>WHATSAPP</small><h3>Escríbenos por WhatsApp</h3><p>Resolvemos tus dudas con calma.</p></a><a href="https://www.instagram.com/profitsmindset" target="_blank" rel="noopener"><small>INSTAGRAM</small><h3>Síguenos en Instagram</h3><p>Contenido de mercados y mentalidad.</p></a></div></div></section>
+<footer class="ft"><div class="wrap"><div class="fg"><div class="fb"><img id="flg" alt="Profit Mindset"><p>Copytrading y desarrollo personal para quienes piensan a largo plazo.</p></div><div class="fc"><h4>Servicios</h4><a href="#que">Copytrading</a><a href="#business">Business</a><a href="#mindset">Mindset Zone</a></div><div class="fc"><h4>Empresa</h4><a href="#como">Cómo funciona</a><a href="#faq">Preguntas frecuentes</a><a href="#contacto">Contacto</a></div><div class="fc"><h4>Legal</h4><a href="#riesgo">Aviso de riesgo</a><a href="#">Política de privacidad</a><a href="#">Aviso legal</a><a href="#">Política de cookies</a></div></div><div class="fl"><p class="rk" id="riesgo">Aviso de riesgo: operar con instrumentos financieros apalancados conlleva un alto riesgo de pérdida de capital y puede no ser adecuado para todos los inversores. Las rentabilidades pasadas no garantizan resultados futuros. La información de este sitio es meramente informativa y no constituye asesoramiento financiero ni una recomendación de inversión.</p><div class="fbot"><span>© 2026 Profit Mindset. Todos los derechos reservados.</span><span><a href="https://www.instagram.com/profitsmindset" target="_blank" rel="noopener">Instagram</a><a href="https://wa.me/message/SVURH2DHVNIDN1" target="_blank" rel="noopener">WhatsApp</a></span></div></div></div></footer>
+
+<script>
+(function(){
+var bar=document.getElementById('bar'),nv=document.getElementById('nv'),tl=document.getElementById('tl'),c3=document.getElementById('c3');
+function sc(){var h=document.documentElement,y=window.scrollY,m=h.scrollHeight-h.clientHeight;
+bar.style.width=(m>0?y/m*100:0)+'%';nv.classList.toggle('sc',y>20);
+var r=tl.getBoundingClientRect(),p=Math.min(1,Math.max(0,(innerHeight*.6-r.top)/r.height));tl.style.setProperty('--p',p*100+'%');
+if(c3&&y<innerHeight)c3.style.transform='translateY('+(y*.06)+'px)'}
+addEventListener('scroll',sc,{passive:true});sc();
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('on')})},{threshold:.15});
+document.querySelectorAll('.rv').forEach(function(e){io.observe(e)});
+var io2=new IntersectionObserver(function(es){es.forEach(function(e){e.target.classList.toggle('on',e.isIntersecting)})},{rootMargin:'-35% 0px -35% 0px'});
+document.querySelectorAll('.pn,.st').forEach(function(e){io2.observe(e)});
+var fm=function(n){return String(n).replace(/\B(?=(\d{3})+(?!\d))/g,'.')},ds=document.getElementById('dash');
+if(ds){new IntersectionObserver(function(es,o){es.forEach(function(e){if(!e.isIntersecting)return;ds.classList.add('on');o.disconnect();ds.querySelectorAll('.k b').forEach(function(b){var n=+b.dataset.n,p=b.dataset.p||'',y=b.dataset.f==='y',t0=performance.now();(function s(t){var k=Math.min(1,(t-t0)/1600),v=Math.round(n*(1-Math.pow(1-k,3)));b.textContent=y?v:p+fm(v)+' €';if(k<1)requestAnimationFrame(s)})(t0)})})},{threshold:.3}).observe(ds)}
+var Q=['“La disciplina te lleva donde la motivación no llega.”','“No operes tu estado de ánimo: opera tu plan.”','“El mercado premia la paciencia, no la prisa.”','“Pequeños hábitos, grandes resultados con el tiempo.”'],qi=0,qt=document.getElementById('qt'),dt=document.querySelectorAll('#dots i');
+if(qt)setInterval(function(){qt.classList.add('f');setTimeout(function(){qi=(qi+1)%Q.length;qt.textContent=Q[qi];dt.forEach(function(d,i){d.classList.toggle('a',i===qi)});qt.classList.remove('f')},500)},4500);
+var bg=document.getElementById('bg'),mn=document.getElementById('mn'),md=document.getElementById('md');
+function tm(o){bg.classList.toggle('o',o);mn.classList.toggle('o',o);bg.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':''}
+bg.onclick=function(){tm(!mn.classList.contains('o'))};
+mn.querySelectorAll('.mc a').forEach(function(a,i){a.style.setProperty('--i',i);a.addEventListener('click',function(){tm(false)})});
+function st(t){var r=t==='reg';document.getElementById('nm').style.display=r?'block':'none';document.getElementById('ck').style.display=r?'flex':'none';document.getElementById('pw').style.display=r?'none':'block';document.getElementById('pw').required=!r;document.querySelector('#ck input').required=r;document.getElementById('sb').textContent=r?'Crear mi registro':'Entrar';document.querySelectorAll('.tabs button').forEach(function(b){b.classList.toggle('a',b.dataset.m===t)});document.getElementById('ntf').classList.remove('o')}
+document.querySelectorAll('[data-m]').forEach(function(b){b.addEventListener('click',function(){if(!md.classList.contains('o')){tm(false);md.classList.add('o')}st(b.dataset.m)})});
+document.getElementById('x').onclick=function(){md.classList.remove('o')};md.addEventListener('click',function(e){if(e.target===md)md.classList.remove('o')});
+addEventListener('keydown',function(e){if(e.key==='Escape'){md.classList.remove('o');tm(false)}});
+document.getElementById('fm').addEventListener('submit',function(e){e.preventDefault();var u=window.FORM_ENDPOINT,n=document.getElementById('ntf');if(!u){n.classList.add('o');return}fetch(u,{method:'POST',body:new FormData(e.target)}).then(function(){n.textContent='¡Gracias! Te escribiremos pronto.';n.classList.add('o');e.target.reset()})});
+var rm=matchMedia('(prefers-reduced-motion:reduce)').matches,fd=document.querySelectorAll('#faq details');
+fd.forEach(function(d){var s=d.querySelector('summary'),p=d.querySelector('p');
+function go(o){if(d._a)d._a.cancel();p.style.overflow='hidden';
+if(o){d.open=true;delete d.dataset.s;var h=p.offsetHeight;d._a=p.animate([{height:'0px',opacity:0,marginTop:'0px'},{height:h+'px',opacity:1,marginTop:'14px'}],{duration:rm?1:600,easing:'cubic-bezier(.16,1,.3,1)'})}
+else{d.dataset.s='closing';var h2=p.offsetHeight;d._a=p.animate([{height:h2+'px',opacity:1,marginTop:'14px'},{height:'0px',opacity:0,marginTop:'0px'}],{duration:rm?1:420,easing:'cubic-bezier(.65,0,.35,1)'});d._a.onfinish=function(){d.open=false;delete d.dataset.s}}}
+d._go=go;
+s.addEventListener('click',function(e){e.preventDefault();var o=d.open&&d.dataset.s!=='closing';if(!o)fd.forEach(function(x){if(x!==d&&x.open&&x.dataset.s!=='closing')x._go(false)});go(!o)})});
+document.getElementById('flg').src=document.querySelector('.logo img').src;
+var pn=document.getElementById('pnl');
+function pp(o){pn.classList.toggle('o',o);pn.setAttribute('aria-hidden',!o);document.body.style.overflow=o?'hidden':'';if(o)pn.scrollTop=0}
+document.getElementById('pb').onclick=function(){pp(true)};document.getElementById('bk').onclick=function(){pp(false)};
+addEventListener('keydown',function(e){if(e.key==='Escape')pp(false)});
+document.querySelectorAll('.bc').forEach(function(b){b.addEventListener('pointermove',function(e){var r=b.getBoundingClientRect();b.style.setProperty('--x',e.clientX-r.left+'px');b.style.setProperty('--y',e.clientY-r.top+'px')})});
+})();
+</script>
+</body>
+</html>
