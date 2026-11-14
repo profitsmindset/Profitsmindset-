@@ -233,6 +233,13 @@ nav.hd .bg{background:rgba(10,10,10,.8);-webkit-backdrop-filter:blur(10px);backd
 .ex b{display:flex;align-items:center;gap:10px;font-size:21px;letter-spacing:-.02em}.ex b svg{flex:none}
 .ex p,.of p{margin:10px 0 0;color:var(--mu);font-size:13px;line-height:1.6}
 .of{background:#fff;border-color:#fff}.of small{color:#4a4a4f;font-weight:600}.of p{color:#0a0a0a;font-size:14px;margin:0;line-height:1.6}
+.ucp{height:3px;border-radius:3px;background:rgba(255,255,255,.12);margin-top:22px;overflow:hidden}.ucp i{display:block;height:100%;background:#fff;transform-origin:left;animation:ucp 12s linear forwards}@keyframes ucp{to{transform:scaleX(0)}}
+.ucs{display:block;margin-top:12px;font-size:12px;color:var(--mu);line-height:1.5}
+.ofb{display:inline-block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;background:#fff;color:#000;border-radius:99px;padding:6px 13px;margin-bottom:14px}
+.ucr{display:grid;gap:10px}.ucr .btn.o{border:1px solid var(--ln);background:none;color:#fff}.ucr .btn.o:hover{border-color:#fff}.ucr+.ucs{margin-top:16px}
+#uc .uci svg{animation:wr 1.1s ease-in-out infinite;transform-origin:50% 50%}
+@keyframes wr{0%,100%{transform:rotate(-24deg)}50%{transform:rotate(24deg)}}
+@media(prefers-reduced-motion:reduce){#uc .uci svg{animation:none}}
 #mz-como{grid-template-columns:repeat(3,1fr)}
 @media(max-width:860px){.mi,.ct{grid-template-columns:1fr}.mi{gap:30px}.kp,.pl{grid-template-columns:1fr}.pl{grid-template-columns:1fr 1fr}#mz-como{grid-template-columns:1fr}}
 @media(max-width:860px){.links{display:none}.hg,.sg{grid-template-columns:1fr}.stk{position:static}.bc,.bc:nth-child(n){grid-column:span 6}.tl{padding-left:62px}.st em{left:-62px}.tl::before,.tl i{left:23px}}
@@ -260,7 +267,8 @@ nav.hd .bg{background:rgba(10,10,10,.8);-webkit-backdrop-filter:blur(10px);backd
 <div class="" style="margin-top:70px"><span class="eb">Planes</span><h2 style="font-size:clamp(28px,4vw,46px)">Elige cómo empezar.</h2></div>
 <div class="plan"><div class="pi"><span class="tg">Mindset Zone</span><h3>Plan de 6 meses</h3><p>Seis meses para trabajar tu mentalidad con constancia. Todo en un solo pago.</p><ul><li>Acceso a Mindset Zone durante 6 meses</li><li>Contenido de desarrollo personal para aplicar cada semana</li><li>Resolución de dudas por mensaje</li><li>Comunidad de personas con tu misma visión</li></ul></div><div class="pr"><b>500 €</b><span>pago único · 6 meses<br>o 98 € al mes</span><button class="btn" id="pb" style="border:0;cursor:pointer;font-family:inherit">Ver el plan</button></div></div>
 <div class="row"><button class="btn" data-m="reg" style="border:0;cursor:pointer;font-family:inherit">Regístrate para recibir información</button><a class="btn o" href="https://www.instagram.com/profitsmindset" target="_blank" rel="noopener">Únete en Instagram</a></div></div></div>
-<div id="uc" class="uc" role="dialog" aria-modal="true" aria-labelledby="uct"><div class="ucb"><div class="uci"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.1L3.5 17.2a1.6 1.6 0 0 0 2.3 2.3l5.8-5.8a4 4 0 0 0 5.1-5.4l-2.6 2.6-2.2-.5-.5-2.2z"/></svg></div><h3 id="uct">Página en construcción</h3><p>Estamos trabajando en esta web. Algunas secciones están en desarrollo y todavía no están disponibles. Gracias por tu paciencia.</p><button class="btn" id="ucb">Entendido</button></div></div>
+<div id="uc" class="uc" role="dialog" aria-modal="true" aria-labelledby="uct"><div class="ucb"><div class="uci"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.1L3.5 17.2a1.6 1.6 0 0 0 2.3 2.3l5.8-5.8a4 4 0 0 0 5.1-5.4l-2.6 2.6-2.2-.5-.5-2.2z"/></svg></div><h3 id="uct">Página en construcción</h3><p>Estamos trabajando en esta web. Algunas secciones están en desarrollo y todavía no están disponibles. Gracias por tu paciencia.</p><button class="btn" id="ucb">Entendido</button><div class="ucp"><i></i></div><small class="ucs" id="ucs">Se cerrará en 12 s</small></div></div>
+<div id="ofm" class="uc" role="dialog" aria-modal="true" aria-labelledby="oft"><div class="ucb"><div class="uci"><svg viewBox="0 0 24 24"><path d="M20 12v9H4v-9M2 7h20v5H2zM12 22V7M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg></div><span class="ofb">Oferta exclusiva</span><h3 id="oft">Para nuevos clientes</h3><p>Para los nuevos clientes, podéis empezar desde 500 € y aprovechar los bonus exclusivos para nuevos miembros. Consulta las condiciones con tu especialista.</p><div class="ucr"><a class="btn" id="ofw" href="https://chat.whatsapp.com/CHbFnuDbvO30bTj9KA4tih" target="_blank" rel="noopener">Hablar con un especialista</a><button class="btn o" id="ofk">Entendido</button></div><small class="ucs">Operar con apalancamiento conlleva riesgo de perder capital. Las rentabilidades pasadas no garantizan resultados futuros.</small></div></div>
 <div id="md" class="md"><div class="mb"><button class="x" id="x" aria-label="Cerrar">×</button><div class="tabs"><button class="a" data-m="reg" type="button">Regístrate</button><button data-m="log" type="button">Inicia sesión</button></div><form id="fm"><input id="nm" name="nombre" placeholder="Tu nombre" autocomplete="name"><input name="email" type="email" placeholder="Correo electrónico" required autocomplete="email"><input id="pw" name="password" type="password" placeholder="Contraseña" style="display:none" autocomplete="current-password"><label class="ck" id="ck"><input type="checkbox" required>Acepto recibir información sobre Copytrading y Mindset Zone.</label><button class="btn" id="sb" type="submit">Crear mi registro</button><p class="nt" id="ntf">Muy pronto activaremos los registros. Mientras tanto, escríbenos por Instagram o WhatsApp.</p></form></div></div>
 
 <header class="hero"><div class="glow"></div><div class="wrap hg">
@@ -400,10 +408,14 @@ var s=t.innerHTML;t.innerHTML=new Array(9).join(s);document.documentElement.styl
 (function(){var c=document.getElementById('mzp'),k=document.getElementById('cpn');function o(v){c.classList.toggle('o',v);c.setAttribute('aria-hidden',!v);document.body.style.overflow=(v||k.classList.contains('o'))?'hidden':'';if(v)c.scrollTop=0}
 function r(){o(location.hash==='#mindset-zone')}addEventListener('hashchange',r);r();
 addEventListener('keydown',function(e){if(e.key==='Escape'&&location.hash==='#mindset-zone'&&!document.getElementById('md').classList.contains('o'))location.hash='planes'})})();
-(function(){var u=document.getElementById('uc');u.classList.add('o');document.body.style.overflow='hidden';
-function c(){u.classList.remove('o');var s=location.hash;document.body.style.overflow=(s==='#copytrading'||s==='#mindset-zone')?'hidden':''}
-document.getElementById('ucb').onclick=c;u.addEventListener('click',function(e){if(e.target===u)c()});
-addEventListener('keydown',function(e){if(e.key==='Escape'&&u.classList.contains('o'))c()})})();
+(function(){var u=document.getElementById('uc'),o=document.getElementById('ofm'),s=document.getElementById('ucs'),n=12,iv,done=false;
+function lock(){var h=location.hash;document.body.style.overflow=(u.classList.contains('o')||o.classList.contains('o')||h==='#copytrading'||h==='#mindset-zone')?'hidden':''}
+function show(m){m.classList.add('o');lock()}function hide(m){m.classList.remove('o');lock()}
+function closeUc(){if(done)return;done=true;clearInterval(iv);hide(u);setTimeout(function(){show(o)},450)}
+show(u);iv=setInterval(function(){n--;if(n>0)s.textContent='Se cerrará en '+n+' s';else closeUc()},1000);
+document.getElementById('ucb').onclick=closeUc;u.addEventListener('click',function(e){if(e.target===u)closeUc()});
+document.getElementById('ofk').onclick=function(){hide(o)};document.getElementById('ofw').addEventListener('click',function(){hide(o)});o.addEventListener('click',function(e){if(e.target===o)hide(o)});
+addEventListener('keydown',function(e){if(e.key==='Escape'){if(u.classList.contains('o'))closeUc();else if(o.classList.contains('o'))hide(o)}})})();
 document.querySelectorAll('.bc').forEach(function(b){b.addEventListener('pointermove',function(e){var r=b.getBoundingClientRect();b.style.setProperty('--x',e.clientX-r.left+'px');b.style.setProperty('--y',e.clientY-r.top+'px')})});
 })();
 </script>
